@@ -22,7 +22,8 @@ public class GameManagerLevel1 : MonoBehaviour
 
     private void Start()
     {
-        showQuestion();
+        // showQuestion();
+        DialogManager.Instance.ShowConversation("Level_1",showQuestion);
     }
 
     private void init()
