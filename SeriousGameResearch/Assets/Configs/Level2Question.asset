@@ -14,10 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionList:
   - question: Fill the missing words
-    answer: v__="Huy";
+    answer: l__="Code";
     result:
-    - ar
+    - et
     - ab
     - ac
     - ad
     correctIndex: 0
+  - question: What is x?
+    answer: let x = ''Game'';
+    result:
+    - Play
+    - Code
+    - Game
+    - Over
+    correctIndex: 2
+  - question: what is the correct answer?
+    answer: which is code?
+    result:
+    - let me play this game
+    - let's go
+    - let's write code
+    - let x = ''let's write code'';
+    correctIndex: 3
+  - question: FIll in the missing word
+    answer: which is code?
+    result:
+    - let me play this game
+    - let's go
+    - let's write code
+    - let x = ''let's write code'';
+    correctIndex: 3
+  - question: FIll in the missing word
+    answer: which is code?
+    result:
+    - let x equal 10
+    - let x is 10
+    - let x = 10;
+    - let y is x
+    correctIndex: 2
+  - question: What is the result?
+    answer: let x = ''23''; x = ?
+    result:
+    - 20
+    - 23
+    - '''''23'''''
+    - Twenty-three
+    correctIndex: 1
+  - question: Fill in the missing word
+    answer: le_ y = ''World'';
+    result:
+    - t
+    - s
+    - c
+    - n
+    correctIndex: 0
+  - question: Fill in the missing word
+    answer: _et x = ''Write code'';
+    result:
+    - m
+    - n
+    - l
+    - s
+    correctIndex: 2
+  - question: what is x?
+    answer: let x = ''Hello World''; x = ___?
+    result:
+    - Hello World
+    - Hello There
+    - Hello
+    - World
+    correctIndex: 0
+  - question: what is x?
+    answer: let x = ''Hello World''; x = ___?
+    result:
+    - Hello World
+    - Hello There
+    - Hello
+    - World
+    correctIndex: 0
+  - question: what is the correct answer?
+    answer: what is code?
+    result:
+    - Hello my friend
+    - let code = ''Hello my friend'';
+    - let code equal hello my friend
+    - let's code
+    correctIndex: 1
