@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c0dbac0ff55e2d245b12082800068047
+guid: 35222832ad4797849af7c5f1187ed25d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1917654218690932701
-    second: button_rectangle_gradient_0
+      213: -8413926102932689242
+    second: arrow_basic_w_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_rectangle_gradient_0
+      name: arrow_basic_w_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 384
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddf2a1b0a50ec9a10800000000000000
-      internalID: 1917654218690932701
+      spriteID: 6ae6f4cc9cabb3b80800000000000000
+      internalID: -8413926102932689242
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      button_rectangle_gradient_0: 1917654218690932701
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
