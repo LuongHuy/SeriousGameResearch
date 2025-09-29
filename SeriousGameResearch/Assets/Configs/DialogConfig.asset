@@ -86,97 +86,108 @@ MonoBehaviour:
       content: If you see something like this. It's called a code line.
       hint: let x = "hello world";
     - characterType: 0
+      characterMood: 0
+      content: Let's break them into smaller element.
+      hint: let x = "hello world";
+    - characterType: 0
+      characterMood: 1
+      content: In the above code, "let" is a keyword that introduce the element x.
+      hint: let
+    - characterType: 0
       characterMood: 2
-      content: Let's break them into smaller element
+      content: The keyword is different by its meaning, but now, just remember that
+      hint: let
+    - characterType: 0
+      characterMood: 1
+      content: x is the name of the context that will show after. You can set it
+        y, z, a or whatever you want.
+      hint: x
+    - characterType: 0
+      characterMood: 0
+      content: '"=" is the assign symbol. It links the x above with the context after
+        that.'
+      hint: =
+    - characterType: 0
+      characterMood: 1
+      content: '"hello world" is the context. From now on, x is hello world'
+      hint: '"hello world'''''
+    - characterType: 0
+      characterMood: 2
+      content: Can you recognize which element that we haven't mentioned?
+      hint: let x = ''hello world'';
+    - characterType: 0
+      characterMood: 0
+      content: Yeah, the ;
+      hint: ;
+    - characterType: 0
+      characterMood: 2
+      content: ; is the statement terminator. It's essential in every code line.
+        You must not forget to write it.
+      hint: ;
+    - characterType: 0
+      characterMood: 2
+      content: Now, I already explain the basic format of the code. Is it hard?
+      hint: let x = "hello world";
+    - characterType: 0
+      characterMood: 0
+      content: It's not too hard, isn't it?
+      hint: let x = "hello world";
+    - characterType: 0
+      characterMood: 2
+      content: You may be familiar with it, soon!
+      hint: let x = "hello world";
+    - characterType: 1
+      characterMood: 0
+      content: Err.... Th....Thanks!
+      hint: let x = "hello world";
+    - characterType: 0
+      characterMood: 1
+      content: Don't worry, you may feel better! I will support you.
+      hint: let x = "hello world";
+    - characterType: 0
+      characterMood: 2
+      content: Now, I will give you some small exercises to practice.
+      hint: 
+    - characterType: 0
+      characterMood: 0
+      content: This one will help you increase the code recognization skill.
       hint: 
     - characterType: 0
       characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
-      hint: 
-    - characterType: 0
-      characterMood: 2
-      content: Ok! I can help you. At least we can be friend now.
+      content: Now! ROBOT.....OUT!
       hint: 
   - conversationID: Level_2
     Dialogs:
     - characterType: 0
       characterMood: 0
-      content: "Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi th\u1EBF gi\u1EDBi, t\xF4i
-        l\xE0 Robot h\u01B0\u1EDBng d\u1EABn, s\u1EBD gi\xFAp b\u1EA1n v\u01B0\u1EE3t
-        qua c\xE1c ch\u01B0\u1EDBng ng\u1EA1i tr\u01B0\u1EDBc m\u1EAFt"
+      content: Congratulation! You just reach level 2. You're amazing
       hint: 
     - characterType: 1
       characterMood: 0
-      content: "\u01A0 \u01A1.... Robot bi\u1EBFt n\xF3i n\xE0y"
+      content: Yay me....
       hint: 
     - characterType: 0
       characterMood: 1
-      content: "C\xF3 g\xEC b\u1EA5t ng\u1EDD sao?"
-      hint: 
-    - characterType: 1
-      characterMood: 1
-      content: "Th\u1EBF t\xF4i ph\u1EA3i l\xE0m g\xEC \u0111\u1EC3 tho\xE1t \u0111\u01B0\u1EE3c
-        kh\u1ECFi \u0111\xE2y?"
+      content: Code is interesting and easy, right?
       hint: 
     - characterType: 0
-      characterMood: 2
-      content: "B\u1EA1n ph\u1EA3i v\u01B0\u1EE3t qua t\u1EA5t c\u1EA3 nh\u1EEFng
-        c\xE2u \u0111\u1ED1, t\xF4i s\u1EBD l\xE0 ng\u01B0\u1EDDi \u0111\u1ED3ng
-        h\xE0nh c\u0169ng b\u1EA1n"
-      hint: "Code v\xED d\u1EE5"
+      characterMood: 0
+      content: Now, let's start to deal with level 2.
+      hint: 
+    - characterType: 0
+      characterMood: 0
+      content: 'Remember the code structure? '
+      hint: let x = "hello world'';
+    - characterType: 0
+      characterMood: 0
+      content: Remember that x and the "hello world" context can be change freely.
+      hint: let x = "hello world'';
+    - characterType: 0
+      characterMood: 1
+      content: If the x (or y) is assigned to a number, it doesn't need to have a
+        quote mark.
+      hint: let y = 10;
+    - characterType: 0
+      characterMood: 0
+      content: Now, let's start the second level! Robot.....out!
+      hint: 

@@ -8,6 +8,11 @@ public class ChangeScreenScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadSceneAsync(1);
     }
+    public void LevelMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadSceneAsync(0);
+    }
 
     public void LevelSelectMenu()
     {
