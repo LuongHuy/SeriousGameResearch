@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameManagerLevel1 : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class GameManagerLevel1 : MonoBehaviour
     public Button trueButton;
     public Button falseButton;
 
+    public GameObject endGameUI;
+
+    public GameObject trueText;   
+    public GameObject falseText;
+    public GameObject panelDialog;
+
+    private Coroutine currentTextCoroutine;
+
     private Level1QuestionConfig.questionData currentQuestionData;
 
     private void Awake()
@@ -22,7 +31,20 @@ public class GameManagerLevel1 : MonoBehaviour
 
     private void Start()
     {
+        //showQuestion();
+        DialogManager.Instance.ShowConversation("Level_1",OnDialogCompleted);
+    }
+    private void OnDialogCompleted()
+    {
+        // Show the first question
         showQuestion();
+
+        // Disable the DialogManager GameObject
+        if (DialogManager.Instance != null)
+        {
+            DialogManager.Instance.gameObject.SetActive(false);
+            panelDialog.SetActive(false);
+        }
     }
 
     private void init()
@@ -41,6 +63,11 @@ public class GameManagerLevel1 : MonoBehaviour
             Debug.Log("EndGame");
             trueButton.enabled = false;
             falseButton.enabled = false;
+
+            if (endGameUI != null)
+            {
+                endGameUI.SetActive(true);
+            }
             return;
         }
         var questionIndex = Random.Range (0, totalQuestion.Count);
@@ -53,14 +80,34 @@ public class GameManagerLevel1 : MonoBehaviour
 
     public void onClickToAnswer(bool isCorrect)
     {
+        if (currentTextCoroutine != null)
+        {
+            StopCoroutine(currentTextCoroutine);
+            trueText.SetActive(false);
+            falseText.SetActive(false);
+        }
+
         if (isCorrect == currentQuestionData.isCorrect) 
         {
             Debug.Log("True");
+            StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
         }
         else
         {
             Debug.Log("False");
+            StartCoroutine(ShowTextForSeconds(falseText, 0.75f));
         }
         showQuestion();
+    }
+
+    private IEnumerator ShowTextForSeconds(GameObject textObj, float seconds)
+    {
+        if (textObj != null)
+        {
+            textObj.SetActive(true);
+            yield return new WaitForSeconds(seconds);
+            textObj.SetActive(false);
+            currentTextCoroutine = null;
+        }
     }
 }

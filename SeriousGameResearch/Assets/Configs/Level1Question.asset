@@ -14,11 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionList:
   - question: Is this code?
-    answer: var="huy";
-    isCorrect: 1
-  - question: Is this code?
-    answer: var="Toan";
-    isCorrect: 1
-  - question: Is this code?
-    answer: Toi la Huy
+    answer: Hello my friend
     isCorrect: 0
+  - question: Is this code?
+    answer: let x = 1;
+    isCorrect: 1
+  - question: Is this code?
+    answer: My name is Robot
+    isCorrect: 0
+  - question: Is this code?
+    answer: let me introduce you
+    isCorrect: 0
+  - question: Is this code?
+    answer: let x = ''a'';
+    isCorrect: 1
+  - question: Is this code?
+    answer: let me show you the game
+    isCorrect: 0
+  - question: Is this code?
+    answer: let a = 2;
+    isCorrect: 1
+  - question: Is this code?
+    answer: You are awsome
+    isCorrect: 0
+  - question: Is this code?
+    answer: let hello = ''I love you'';
+    isCorrect: 1
+  - question: Is this code?
+    answer: let hello = ''I love you'';
+    isCorrect: 1
