@@ -40,4 +40,9 @@ public class ChangeScreenScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

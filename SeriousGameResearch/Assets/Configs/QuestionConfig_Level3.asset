@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3e73df40e1c8349916af0a1d8fc9cc, type: 3}
+  m_Name: QuestionConfig_Level3
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionConfig
+  TimePerQuestion: 3.5
+  questions:
+  - id: 0
+    question: Is "let x = 10;" code?
+    answer: 1
+  - id: 1
+    question: Is "Hello Sir!" code?
+    answer: 0
+  - id: 2
+    question: let x = 10; x is "ten". True or False
+    answer: 0
+  - id: 3
+    question: Code can run without ";"
+    answer: 0
+  - id: 4
+    question: let x = "true"; x is "true"
+    answer: 1
+  - id: 5
+    question: is "Hello = Hi" code?
+    answer: 0
+  - id: 8
+    question: let y = 10; y = 10
+    answer: 1
+  - id: 9
+    question: If let z = x; z is y?
+    answer: 0
+  - id: 10
+    question: is "Hey Siri" code?
+    answer: 0
+  - id: 2
+    question: is let code = "fun"; code?
+    answer: 1
