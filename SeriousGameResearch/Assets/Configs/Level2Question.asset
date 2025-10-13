@@ -101,3 +101,12 @@ MonoBehaviour:
     - let code equal hello my friend
     - let's code
     correctIndex: 1
+  characterMoodDatas:
+  - characterMood: 0
+    characterSprite: {fileID: 21300000, guid: d98d33b66d6f0874ebb5082b9fe8a24c, type: 3}
+  - characterMood: 1
+    characterSprite: {fileID: 21300000, guid: e7cfc8e6972be6d4ebdd2a4e98231b5d, type: 3}
+  - characterMood: 2
+    characterSprite: {fileID: 21300000, guid: e7cfc8e6972be6d4ebdd2a4e98231b5d, type: 3}
+  - characterMood: 3
+    characterSprite: {fileID: 21300000, guid: 56f952839472ddb4ea805b80403936f1, type: 3}
