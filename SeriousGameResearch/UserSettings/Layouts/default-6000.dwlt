@@ -325,7 +325,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1920, y: 1080}
+  m_TargetSize: {x: 1024, y: 720}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -340,10 +340,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -512
+    m_HBaseRangeMax: 512
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -363,20 +363,20 @@ MonoBehaviour:
       y: 21
       width: 1002
       height: 565
-    m_Scale: {x: 0.521875, y: 0.521875}
-    m_Translation: {x: 500.99997, y: 282.5}
+    m_Scale: {x: 0.7847222, y: 0.7847222}
+    m_Translation: {x: 501, y: 282.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -959.9999
-      y: -541.3173
-      width: 1919.9999
-      height: 1082.6346
+      x: -638.4425
+      y: -360
+      width: 1276.885
+      height: 720
     m_MinimalGUI: 1
-  m_defaultScale: 0.521875
+  m_defaultScale: 0.7847222
   m_LastWindowPixelSize: {x: 1002, y: 586}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 914.267, y: 442.545, z: -2.1217122}
+    m_Target: {x: 512.14905, y: 360, z: 0}
     speed: 2
     m_Value: {x: 914.267, y: 442.545, z: -2.1217122}
   m_RenderMode: 0
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 554.0027
+    m_Target: 626.0165
     speed: 2
     m_Value: 554.0027
   m_Ortho:
@@ -1233,7 +1233,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 92}
     m_SelectedIDs: 1eb50000
     m_LastClickedID: 46366
-    m_ExpandedIDs: 00000000fcb40000feb40000
+    m_ExpandedIDs: 00000000f6d90000f8d90000fad90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1262,7 +1262,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fcb40000feb40000
+    m_ExpandedIDs: 00000000f6d90000f8d90000fad90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
