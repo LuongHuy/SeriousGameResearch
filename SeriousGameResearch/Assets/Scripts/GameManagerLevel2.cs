@@ -20,6 +20,7 @@ public class GameManagerLevel2 : MonoBehaviour
     public UIAnswerView[] uIAnswerViews;
 
     private Level2QuestionConfig.questionData currentQuestionData;
+    private int questionPass;
 
     private void Awake()
     {
@@ -96,8 +97,10 @@ public class GameManagerLevel2 : MonoBehaviour
             }
         }
 
-        questionView.SetQuestion(currentQuestionData.question, currentQuestionData.answer);
+        questionView.SetQuestion(currentQuestionData.question, currentQuestionData.answer, questionPass == 0);
         questionView.SetInteract(true);
+
+        questionPass++;
     }
 
     public async void onClickToAnswer(int correctIndex)
@@ -115,6 +118,18 @@ public class GameManagerLevel2 : MonoBehaviour
         {
             Debug.Log("False");
             answerView.PickResultForView(Color.red, false);
+
+            foreach (var view in uIAnswerViews)
+            {
+                if (view.AnswerIndex != currentQuestionData.correctIndex)
+                {
+                    continue;
+                }
+                
+                view.PickResultForView(Color.green, false);
+                break;
+            }
+            
         }
 
         await Task.Delay((int)(delayShowAnswerResult * 1000));

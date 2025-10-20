@@ -17,7 +17,7 @@ public class Level2QuestionConfig : ScriptableObject
     public class CharacterMoodData
     {
         public CharacterMood characterMood;
-        public Sprite characterSprite;
+        public Sprite[] characterSprite;
     }
 
     [Serializable]
@@ -35,7 +35,7 @@ public class Level2QuestionConfig : ScriptableObject
     [SerializeField]
     private List<CharacterMoodData> characterMoodDatas;
 
-    public Sprite GetCharacterMoodSprite(CharacterMood characterMood)
+    public Sprite GetCharacterMoodSprite(CharacterMood characterMood, int slotAnswerIndex)
     {
         if (characterMoodDatas == null || characterMoodDatas.Count == 0)
         {
@@ -46,7 +46,7 @@ public class Level2QuestionConfig : ScriptableObject
         var moodData = characterMoodDatas.Find(data => data.characterMood == characterMood);
         if (moodData != null)
         {
-            return moodData.characterSprite;
+            return moodData.characterSprite[slotAnswerIndex];
         }
 
         Debug.LogWarning($"Character mood '{characterMood}' not found.");

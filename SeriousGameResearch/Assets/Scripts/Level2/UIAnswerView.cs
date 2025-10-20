@@ -23,6 +23,8 @@ public class UIAnswerView : MonoBehaviour
     [SerializeField]
     private Level2QuestionConfig questionConfig;
 
+    public int AnswerIndex => answerIndex;
+    
     private bool isPicked;
     private int answerIndex;
 
@@ -33,10 +35,10 @@ public class UIAnswerView : MonoBehaviour
 
         if (isPicked)
         {
-            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Exciting);
+            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Exciting, answerIndex);
         }
         else {
-            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Idle);
+            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Idle, answerIndex);
         }
             
     }
@@ -56,9 +58,9 @@ public class UIAnswerView : MonoBehaviour
         myImg.color = color;
 
         if (isRight) {
-            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Fun);
+            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Fun, answerIndex);
         } else {
-            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Sad);
+            characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Sad, answerIndex);
         }
             
     }
@@ -67,7 +69,7 @@ public class UIAnswerView : MonoBehaviour
     {
         myImg.color = colorNormal;
         isPicked = false;
-        characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Idle);
+        characterImg.sprite = questionConfig.GetCharacterMoodSprite(Level2QuestionConfig.CharacterMood.Idle, answerIndex);
     }
 
     public void SetAnswert(string answer, int index)

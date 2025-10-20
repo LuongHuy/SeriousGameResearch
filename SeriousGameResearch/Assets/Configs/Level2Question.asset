@@ -103,10 +103,26 @@ MonoBehaviour:
     correctIndex: 1
   characterMoodDatas:
   - characterMood: 0
-    characterSprite: {fileID: 21300000, guid: 27ec72a8b10f6ba4d9898a309fdeab17, type: 2}
+    characterSprite:
+    - {fileID: 21300000, guid: af7713f26672b4f4ca34eb06006dbe41, type: 3}
+    - {fileID: 21300000, guid: b02bd52ed51c2064f98d894ee2bb1052, type: 3}
+    - {fileID: 21300000, guid: af32558e4c951eb4da72446b140b3877, type: 3}
+    - {fileID: 21300000, guid: 848be9e547484304e8bc3cbc3b764e44, type: 3}
   - characterMood: 1
-    characterSprite: {fileID: 21300000, guid: 7d5341d6fb3b18e47ae67b3ca28a8f54, type: 2}
+    characterSprite:
+    - {fileID: 21300000, guid: a6f4ee231cbae974f99d178a62b3b156, type: 3}
+    - {fileID: 21300000, guid: 88aeebd1eaca9de40845793624ac3f74, type: 3}
+    - {fileID: 21300000, guid: 1c7f7c21937ece44c9b9c794d1321bcb, type: 3}
+    - {fileID: 21300000, guid: e20e1887ac25a324ca178727f5f8f717, type: 3}
   - characterMood: 2
-    characterSprite: {fileID: 21300000, guid: 90f70d714e032d4428bcc7716349cf66, type: 2}
+    characterSprite:
+    - {fileID: 21300000, guid: 6a5f97ede50120e4fb1951060a91a800, type: 3}
+    - {fileID: 21300000, guid: a174acee4da7fb64b950af6cb6e043ea, type: 3}
+    - {fileID: 21300000, guid: d9c6071675700ee43b86b4628d68556f, type: 3}
+    - {fileID: 21300000, guid: 439272e2017c1d84194ec8f1be12652b, type: 3}
   - characterMood: 3
-    characterSprite: {fileID: 21300000, guid: d4e601355333e054485448572571901c, type: 2}
+    characterSprite:
+    - {fileID: 21300000, guid: 623f9e1b2bbad704aa78ab32f6b77a43, type: 3}
+    - {fileID: 21300000, guid: e5a842f3e4156dd49b7e97f03c8ab114, type: 3}
+    - {fileID: 21300000, guid: dede930ee5f7aab4fa871748567e1aac, type: 3}
+    - {fileID: 21300000, guid: 5e0e1040d5aa9894692695e0eca22c8b, type: 3}
