@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,28 +8,31 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField]
-    private CharacterController characterController;
-    [SerializeField]
-    private StreetManager streetManager;
-    [SerializeField]
-    private QuestionUIView questionUIView;
-    [SerializeField]
-    private QuestionConfig questionConfig;
+    [Header("References")]
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] private StreetManager streetManager;
+    [SerializeField] private QuestionUIView questionUIView;
+    [SerializeField] private QuestionConfig questionConfig;
+
+    [Header("UI")]
+    public GameObject winGameUI;
+    public GameObject loseGameUI;
+    public GameObject trueText;
+    public GameObject falseText;
+    public TextMeshProUGUI healthText;
+
+    [Header("Audio / SFX Settings")]
+    public AudioSource sfxSource;       // 2D, Loop=Off, PlayOnAwake=Off
+    public AudioClip correctSFX;        // SFX khi trả lời đúng
+    public AudioClip incorrectSFX;      // SFX khi trả lời sai
+    public AudioClip endgameWinSFX;     // SFX khi chiến thắng (EndGame Win)
+    public AudioClip endgameLoseSFX;    // SFX khi thua (EndGame Lose)
+    [Range(0f, 1f)] public float sfxVolume = 0.8f;
 
     private Queue<QuestionConfig.QuestionData> questionQueue;
     private QuestionConfig.QuestionData currentQuestion;
     private float delayAnswer;
-
-    public GameObject winGameUI;
-    public GameObject loseGameUI;
-
-    public GameObject trueText;
-    public GameObject falseText;
-
     private int curHealth;
-    public TextMeshProUGUI healthText;
-
     private Coroutine currentTextCoroutine;
 
     private void Awake()
@@ -42,19 +45,35 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Cấu hình sfxSource chuẩn
+        if (sfxSource != null)
+        {
+            sfxSource.loop = false;
+            sfxSource.playOnAwake = false;
+            sfxSource.spatialBlend = 0f; // 2D
+        }
     }
 
-    private void Start() {
+    private void Start()
+    {
         curHealth = 3;
         healthText.text = curHealth.ToString();
+
         DialogManager.Instance.ShowConversation("Level_3", OnConversationEnd);
+
         questionQueue = new Queue<QuestionConfig.QuestionData>(questionConfig.Questions);
-        streetManager.InitStreet(questionConfig.Questions.Length, characterController.ForwardSpeed * questionConfig.TimePerQuestion, AnswerQuestion);
+        streetManager.InitStreet(
+            questionConfig.Questions.Length,
+            characterController.ForwardSpeed * questionConfig.TimePerQuestion,
+            AnswerQuestion
+        );
     }
 
-    public void GenerateQuestion() { 
-        if(questionQueue.Count == 0)
-        {          
+    public void GenerateQuestion()
+    {
+        if (questionQueue.Count == 0)
+        {
             ShowGameoverWin();
             return;
         }
@@ -63,24 +82,30 @@ public class GameManager : MonoBehaviour
         questionUIView.ShowQuestion(currentQuestion.question);
     }
 
-    public bool AnswerQuestion(bool isTrue) { 
-        if(currentQuestion == null || delayAnswer > Time.time)
+    public bool AnswerQuestion(bool isTrue)
+    {
+        if (currentQuestion == null || delayAnswer > Time.time)
         {
             Debug.LogWarning("No current question to answer.");
             return false;
         }
 
-        if(currentQuestion.answer == isTrue)
+        if (currentQuestion.answer == isTrue)
         {
-          
-           StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
+            // Đúng
+            StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
+            PlaySFX(correctSFX);
         }
         else
-        {          
+        {
+            // Sai
             StartCoroutine(ShowTextForSeconds(falseText, 0.75f));
+            PlaySFX(incorrectSFX);
+
             curHealth--;
             healthText.text = curHealth.ToString();
-            if (curHealth <= 0) 
+
+            if (curHealth <= 0)
             {
                 ShowGameoverLose();
                 return false;
@@ -100,9 +125,13 @@ public class GameManager : MonoBehaviour
         GenerateQuestion();
     }
 
-    private void ShowGameoverWin() { 
+    private void ShowGameoverWin()
+    {
         characterController.CanMove = false;
         winGameUI.SetActive(true);
+
+        // 🔊 Phát âm thanh thắng cuối màn
+        PlaySFX(endgameWinSFX);
     }
 
     private void ShowGameoverLose()
@@ -110,6 +139,8 @@ public class GameManager : MonoBehaviour
         characterController.CanMove = false;
         loseGameUI.SetActive(true);
 
+        // 🔊 Phát âm thanh thua cuối màn
+        PlaySFX(endgameLoseSFX);
     }
 
     private IEnumerator ShowTextForSeconds(GameObject textObj, float seconds)
@@ -120,6 +151,16 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(seconds);
             textObj.SetActive(false);
             currentTextCoroutine = null;
+        }
+    }
+
+    // Hàm phát âm thanh chung
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null && sfxSource != null)
+        {
+            sfxSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+            sfxSource.PlayOneShot(clip, sfxVolume);
         }
     }
 }

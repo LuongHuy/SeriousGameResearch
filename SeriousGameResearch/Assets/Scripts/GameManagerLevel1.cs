@@ -1,5 +1,4 @@
-using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -16,13 +15,19 @@ public class GameManagerLevel1 : MonoBehaviour
 
     public GameObject endGameUI;
 
-    public GameObject trueText;   
+    public GameObject trueText;
     public GameObject falseText;
     public GameObject panelDialog;
 
     private Coroutine currentTextCoroutine;
-
     private Level1QuestionConfig.questionData currentQuestionData;
+
+
+    public AudioSource sfxSource;         
+    public AudioClip correctSFX;         
+    public AudioClip incorrectSFX;         
+    public AudioClip endGameSFX;
+    [Range(0f, 1f)] public float sfxVolume = 0.8f;
 
     private void Awake()
     {
@@ -31,15 +36,13 @@ public class GameManagerLevel1 : MonoBehaviour
 
     private void Start()
     {
-        //showQuestion();
-        DialogManager.Instance.ShowConversation("Level_1",OnDialogCompleted);
+        DialogManager.Instance.ShowConversation("Level_1", OnDialogCompleted);
     }
+
     private void OnDialogCompleted()
     {
-        // Show the first question
         showQuestion();
 
-        // Disable the DialogManager GameObject
         if (DialogManager.Instance != null)
         {
             DialogManager.Instance.gameObject.SetActive(false);
@@ -49,17 +52,26 @@ public class GameManagerLevel1 : MonoBehaviour
 
     private void init()
     {
-        totalQuestion = new List<Level1QuestionConfig.questionData> (questionConfig.questionList);
+        totalQuestion = new List<Level1QuestionConfig.questionData>(questionConfig.questionList);
+
         trueButton.onClick.RemoveAllListeners();
         falseButton.onClick.RemoveAllListeners();
+
         trueButton.onClick.AddListener(() => onClickToAnswer(true));
         falseButton.onClick.AddListener(() => onClickToAnswer(false));
+
+        if (sfxSource != null)
+        {
+            sfxSource.loop = false;
+            sfxSource.playOnAwake = false;
+            sfxSource.spatialBlend = 0f; // 2D sound
+        }
     }
 
     private void showQuestion()
     {
         if (totalQuestion.Count == 0)
-        {          
+        {
             Debug.Log("EndGame");
             trueButton.enabled = false;
             falseButton.enabled = false;
@@ -68,14 +80,16 @@ public class GameManagerLevel1 : MonoBehaviour
             {
                 endGameUI.SetActive(true);
             }
+            PlaySFX(endGameSFX);
             return;
         }
-        var questionIndex = Random.Range (0, totalQuestion.Count);
+
+        var questionIndex = Random.Range(0, totalQuestion.Count);
         currentQuestionData = totalQuestion[questionIndex];
-        totalQuestion.RemoveAt (questionIndex);
+        totalQuestion.RemoveAt(questionIndex);
+
         question.text = currentQuestionData.question;
         answer.text = currentQuestionData.answer;
-
     }
 
     public void onClickToAnswer(bool isCorrect)
@@ -87,17 +101,29 @@ public class GameManagerLevel1 : MonoBehaviour
             falseText.SetActive(false);
         }
 
-        if (isCorrect == currentQuestionData.isCorrect) 
+        if (isCorrect == currentQuestionData.isCorrect)
         {
             Debug.Log("True");
-            StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
+            PlaySFX(correctSFX);
+            currentTextCoroutine = StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
         }
         else
         {
             Debug.Log("False");
-            StartCoroutine(ShowTextForSeconds(falseText, 0.75f));
+            PlaySFX(incorrectSFX);
+            currentTextCoroutine = StartCoroutine(ShowTextForSeconds(falseText, 0.75f));
         }
+
         showQuestion();
+    }
+
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null && sfxSource != null)
+        {
+            sfxSource.pitch = Random.Range(0.95f, 1.05f); // nghe tự nhiên hơn
+            sfxSource.PlayOneShot(clip, sfxVolume);
+        }
     }
 
     private IEnumerator ShowTextForSeconds(GameObject textObj, float seconds)

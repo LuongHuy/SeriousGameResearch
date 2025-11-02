@@ -54,11 +54,11 @@ MonoBehaviour:
     - let y is x
     correctIndex: 2
   - question: What is the result?
-    answer: let x = ''23''; x = ?
+    answer: let x = 23; x = ?
     result:
     - 20
     - 23
-    - '''''23'''''
+    - 2-3
     - Twenty-three
     correctIndex: 1
   - question: Fill in the missing word
@@ -85,16 +85,16 @@ MonoBehaviour:
     - Hello
     - World
     correctIndex: 0
-  - question: what is x?
-    answer: let x = ''Hello World''; x = ___?
+  - question: what is y?
+    answer: let y = ''Hi''; y = ___?
     result:
-    - Hello World
-    - Hello There
-    - Hello
-    - World
+    - No
+    - Yes
+    - x
+    - Hi
     correctIndex: 0
   - question: what is the correct answer?
-    answer: what is code?
+    answer: which is code?
     result:
     - Hello my friend
     - let code = ''Hello my friend'';
@@ -104,25 +104,25 @@ MonoBehaviour:
   characterMoodDatas:
   - characterMood: 0
     characterSprite:
-    - {fileID: 21300000, guid: af7713f26672b4f4ca34eb06006dbe41, type: 3}
-    - {fileID: 21300000, guid: b02bd52ed51c2064f98d894ee2bb1052, type: 3}
-    - {fileID: 21300000, guid: af32558e4c951eb4da72446b140b3877, type: 3}
-    - {fileID: 21300000, guid: 848be9e547484304e8bc3cbc3b764e44, type: 3}
+    - {fileID: 6864239573768326748, guid: dcd5c02fc35cd8943b561678033913ef, type: 3}
+    - {fileID: -6658037320899306967, guid: 8fcd60d57c8167743893c5fe1cf2d63a, type: 3}
+    - {fileID: 6085792165756898652, guid: 71eb3cccf5c10f24a9a34e31537132d2, type: 3}
+    - {fileID: 7408829463142330026, guid: 0933e752cef34f145a6befa79f0809f7, type: 3}
   - characterMood: 1
     characterSprite:
-    - {fileID: 21300000, guid: a6f4ee231cbae974f99d178a62b3b156, type: 3}
-    - {fileID: 21300000, guid: 88aeebd1eaca9de40845793624ac3f74, type: 3}
-    - {fileID: 21300000, guid: 1c7f7c21937ece44c9b9c794d1321bcb, type: 3}
-    - {fileID: 21300000, guid: e20e1887ac25a324ca178727f5f8f717, type: 3}
+    - {fileID: -5141590463388072209, guid: dcd5c02fc35cd8943b561678033913ef, type: 3}
+    - {fileID: -5984595949130580491, guid: 8fcd60d57c8167743893c5fe1cf2d63a, type: 3}
+    - {fileID: 6835604048320725330, guid: 71eb3cccf5c10f24a9a34e31537132d2, type: 3}
+    - {fileID: 4393646546099367849, guid: 0933e752cef34f145a6befa79f0809f7, type: 3}
   - characterMood: 2
     characterSprite:
-    - {fileID: 21300000, guid: 6a5f97ede50120e4fb1951060a91a800, type: 3}
-    - {fileID: 21300000, guid: a174acee4da7fb64b950af6cb6e043ea, type: 3}
-    - {fileID: 21300000, guid: d9c6071675700ee43b86b4628d68556f, type: 3}
-    - {fileID: 21300000, guid: 439272e2017c1d84194ec8f1be12652b, type: 3}
+    - {fileID: -2715308185682847191, guid: dcd5c02fc35cd8943b561678033913ef, type: 3}
+    - {fileID: -1149182830961388519, guid: 8fcd60d57c8167743893c5fe1cf2d63a, type: 3}
+    - {fileID: 1085507992601845991, guid: 71eb3cccf5c10f24a9a34e31537132d2, type: 3}
+    - {fileID: -6600583515161163342, guid: 0933e752cef34f145a6befa79f0809f7, type: 3}
   - characterMood: 3
     characterSprite:
-    - {fileID: 21300000, guid: 623f9e1b2bbad704aa78ab32f6b77a43, type: 3}
-    - {fileID: 21300000, guid: e5a842f3e4156dd49b7e97f03c8ab114, type: 3}
-    - {fileID: 21300000, guid: dede930ee5f7aab4fa871748567e1aac, type: 3}
-    - {fileID: 21300000, guid: 5e0e1040d5aa9894692695e0eca22c8b, type: 3}
+    - {fileID: 7288851871789481686, guid: dcd5c02fc35cd8943b561678033913ef, type: 3}
+    - {fileID: -6269248863695516921, guid: 8fcd60d57c8167743893c5fe1cf2d63a, type: 3}
+    - {fileID: -1043690450471451278, guid: 71eb3cccf5c10f24a9a34e31537132d2, type: 3}
+    - {fileID: 6444276881289278981, guid: 0933e752cef34f145a6befa79f0809f7, type: 3}
