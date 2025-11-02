@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionList:
   - question: Fill the missing words
-    answer: l__="Code";
+    answer: l__ fun ="Code";
     result:
     - et
     - ab
@@ -37,13 +37,13 @@ MonoBehaviour:
     - let's write code
     - let x = ''let's write code'';
     correctIndex: 3
-  - question: FIll in the missing word
+  - question: Choose the correct answer
     answer: which is code?
     result:
-    - let me play this game
-    - let's go
-    - let's write code
-    - let x = ''let's write code'';
+    - code = fun
+    - code is fun
+    - let code = "fun";
+    - let code is fun
     correctIndex: 3
   - question: FIll in the missing word
     answer: which is code?
@@ -101,3 +101,12 @@ MonoBehaviour:
     - let code equal hello my friend
     - let's code
     correctIndex: 1
+  characterMoodDatas:
+  - characterMood: 0
+    characterSprite: {fileID: 21300000, guid: 27ec72a8b10f6ba4d9898a309fdeab17, type: 2}
+  - characterMood: 1
+    characterSprite: {fileID: 21300000, guid: 7d5341d6fb3b18e47ae67b3ca28a8f54, type: 2}
+  - characterMood: 2
+    characterSprite: {fileID: 21300000, guid: 90f70d714e032d4428bcc7716349cf66, type: 2}
+  - characterMood: 3
+    characterSprite: {fileID: 21300000, guid: d4e601355333e054485448572571901c, type: 2}

@@ -176,11 +176,11 @@ MonoBehaviour:
       hint: 
     - characterType: 0
       characterMood: 0
-      content: 'Remember the code structure? '
+      content: 'Remember this code structure? '
       hint: let x = "hello world'';
     - characterType: 0
       characterMood: 0
-      content: Remember that x and the "hello world" context can be change freely.
+      content: Remember that x and the "hello world" context can be changed freely.
       hint: let x = "hello world'';
     - characterType: 0
       characterMood: 1
@@ -190,4 +190,18 @@ MonoBehaviour:
     - characterType: 0
       characterMood: 0
       content: Now, let's start the second level! Robot.....out!
+      hint: 
+  - conversationID: Level_3
+    Dialogs:
+    - characterType: 0
+      characterMood: 0
+      content: Now, it comes to the last level.
+      hint: 
+    - characterType: 0
+      characterMood: 1
+      content: Interesting, isn't it?
+      hint: 
+    - characterType: 0
+      characterMood: 2
+      content: Let's start this challenge with a little bit pressure!
       hint: 

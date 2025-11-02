@@ -41,5 +41,5 @@ MonoBehaviour:
     answer: let hello = ''I love you'';
     isCorrect: 1
   - question: Is this code?
-    answer: let hello = ''I love you'';
+    answer: let hello is "I love you";
     isCorrect: 1
