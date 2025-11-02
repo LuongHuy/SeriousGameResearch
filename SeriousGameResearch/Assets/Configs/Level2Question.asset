@@ -29,7 +29,7 @@ MonoBehaviour:
     - Game
     - Over
     correctIndex: 2
-  - question: what is the correct answer?
+  - question: Answer this question
     answer: which is code?
     result:
     - let me play this game
@@ -37,7 +37,7 @@ MonoBehaviour:
     - let's write code
     - let x = ''let's write code'';
     correctIndex: 3
-  - question: Choose the correct answer
+  - question: Answer this question
     answer: which is code?
     result:
     - code = fun
@@ -45,7 +45,7 @@ MonoBehaviour:
     - let code = "fun";
     - let code is fun
     correctIndex: 3
-  - question: FIll in the missing word
+  - question: Answer this question
     answer: which is code?
     result:
     - let x equal 10
@@ -92,8 +92,8 @@ MonoBehaviour:
     - Yes
     - x
     - Hi
-    correctIndex: 0
-  - question: what is the correct answer?
+    correctIndex: 3
+  - question: Answer this question
     answer: which is code?
     result:
     - Hello my friend

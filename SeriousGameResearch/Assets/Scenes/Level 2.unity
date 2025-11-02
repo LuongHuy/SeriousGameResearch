@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 70}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812163832
@@ -3374,7 +3374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 70}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1826369676
@@ -4300,6 +4300,8 @@ MonoBehaviour:
   - {fileID: 1152928786}
   - {fileID: 1186353056}
   - {fileID: 337573823}
+  trueText: {fileID: 812163830}
+  falseText: {fileID: 1729132178}
   sfxSource: {fileID: 479550614}
   correctSFX: {fileID: 8300000, guid: 835e21a01f930e4499090387d68ec528, type: 3}
   incorrectSFX: {fileID: 8300000, guid: 3b7636bf220a84d48a90343c05b88ea0, type: 3}

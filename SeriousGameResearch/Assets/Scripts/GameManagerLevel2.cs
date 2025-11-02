@@ -20,6 +20,10 @@ public class GameManagerLevel2 : MonoBehaviour
     public UIQuestionView questionView;
     public UIAnswerView[] uIAnswerViews;
 
+    public GameObject trueText;
+    public GameObject falseText;
+
+    private Coroutine currentTextCoroutine;
     private Level2QuestionConfig.questionData currentQuestionData;
     private int questionPass;
 
@@ -120,6 +124,13 @@ public class GameManagerLevel2 : MonoBehaviour
 
     public async void OnClickToAnswer(int pickedIndex)
     {
+        if (currentTextCoroutine != null)
+        {
+            StopCoroutine(currentTextCoroutine);
+            trueText.SetActive(false);
+            falseText.SetActive(false);
+        }
+
         questionView.SetInteract(false);
         var answerView = uIAnswerViews[pickedIndex];
 
@@ -127,7 +138,8 @@ public class GameManagerLevel2 : MonoBehaviour
         {
             Debug.Log("True");
             answerView.PickResultForView(Color.green, true);
-            PlaySFX(correctSFX);          // 🔊 đúng
+            currentTextCoroutine = StartCoroutine(ShowTextForSeconds(trueText, 0.75f));
+            PlaySFX(correctSFX);          
         }
         else
         {
@@ -140,6 +152,7 @@ public class GameManagerLevel2 : MonoBehaviour
                 if (view.AnswerIndex == currentQuestionData.correctIndex)
                 {
                     view.PickResultForView(Color.green, false);
+                    currentTextCoroutine = StartCoroutine(ShowTextForSeconds(falseText, 0.75f));
                     break;
                 }
             }
@@ -156,6 +169,17 @@ public class GameManagerLevel2 : MonoBehaviour
         {
             sfxSource.pitch = Random.Range(0.95f, 1.05f); // tự nhiên hơn
             sfxSource.PlayOneShot(clip, sfxVolume);
+        }
+    }
+
+    private IEnumerator ShowTextForSeconds(GameObject textObj, float seconds)
+    {
+        if (textObj != null)
+        {
+            textObj.SetActive(true);
+            yield return new WaitForSeconds(seconds);
+            textObj.SetActive(false);
+            currentTextCoroutine = null;
         }
     }
 }
