@@ -122,7 +122,12 @@ public class GameManagerLevel2 : MonoBehaviour
         questionPass++;
     }
 
-    public async void OnClickToAnswer(int pickedIndex)
+    public void OnClickToAnswer(int pickedIndex)
+    {
+        StartCoroutine(HandleAnswerProgress(pickedIndex));
+    }
+
+    private IEnumerator HandleAnswerProgress(int pickedIndex)
     {
         if (currentTextCoroutine != null)
         {
@@ -159,7 +164,7 @@ public class GameManagerLevel2 : MonoBehaviour
             PlaySFX(incorrectSFX);        // 🔊 sai
         }
 
-        await Task.Delay((int)(delayShowAnswerResult * 1000));
+        yield return new WaitForSeconds(delayShowAnswerResult);
         ShowQuestion();
     }
 
